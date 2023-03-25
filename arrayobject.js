@@ -1,4 +1,4 @@
-
+// =======Домашки - хвосты с объектов = в конце=====
 
   // const words = ["оно","того","это"];
 
@@ -276,3 +276,118 @@
     // str+= "</select>" ; document.write(str); }
       
     //  )
+
+
+
+//     ========ХВОСТЫ======
+
+
+// ТАБЛИЦА ОБЬЕКТЫ 
+
+    // Зробіть двовимірну таблицю з курсами між усіма можливими парами валют
+
+    //  на кшталт таблиці Піфагора, використовуючи код із завдання Currency real rate:
+
+
+    //  fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+    //  .then(data => {
+
+    //   // сдвигаю ячейки шапки вправо на 1 при помоши тэга <th></th>
+
+    //   let str = "<table> <tr> <th></th>";
+
+    //   // это цикл для горизонтальной строки шапки таблицы
+    //   for(let keyHorisontal in data.rates)
+    //   {str+=`<th>${keyHorisontal}</th>`;}
+    //   str+='</tr>';
+    //   // этот цикл для вертикальной колонки с названиями валют
+    //                {for(let keyHorisontal in data.rates)
+    //                {str += "<tr> ";
+    //                str+=`<td>${keyHorisontal}</td>`;
+
+    //               //  вторым вложенным циклом добираюсь до значений ключей и делю их для кросс курса
+                   
+    //                 for(let keyVertical in data.rates)
+    //                {str+=`<td>${(data.rates[keyHorisontal]/data.rates[keyVertical]).toFixed(2)}</td>`;}
+
+
+
+    //               str+='</tr>';}
+    //               str+= "</table>";
+    //               console.log(str) ; }
+    //          document.write(str);
+ 
+    //      })
+
+
+
+//     =====================
+
+
+// ===================================================================================
+  // Сформувати таблицю (використовуючи накопичення тегів HTML у рядку):
+  
+//   const persons = [
+//       {
+//           name: 'Марія',
+//           fatherName: 'Іванівна',
+//           surname: 'Іванова',
+//           sex: 'female'
+//       },
+//       {
+//           name: 'Миколай',
+//           fatherName: 'Іванович',
+//           surname: 'Іванов',
+//           age: 15
+//       },
+//       {
+//           name: 'Петро',
+//           fatherName: 'Іванович',
+//           surname: 'Іванов',
+//           married: true
+//       },
+//     ]
+//     // обьявляем два пустых массива, один для записи промежуточно извлеченных ключей  и второй для 
+//     // отфильтрованных уникальных ключей
+//     let arrOfKey=[];
+//     let arrOfUniqKey=[];
+//     // сначала извлекаю все ключи в виде массива массивов
+//     for (let i of persons) 
+//     arrOfKey.push(Object.keys(i));
+//     // теперь делаю фильтрацию и если ключ из вложенного массива еще не попал в массив уникальных
+//     // ключей, пушу его туда
+//     for (let key of arrOfKey){ for (let key1 of key) {
+    
+      
+//      if(!arrOfUniqKey.includes(key1)) arrOfUniqKey.push(key1) }}
+//     //  arrOfUniqKey - массив из уникальных ключей
+//     // делаем шапку таблицы
+//     let header = "<tr>";
+//     arrOfUniqKey.forEach(value=>{header+="<th>"+value+"</th>"});
+//     header+="</tr>";
+//      console.log(header);
+    
+//     // вынимаю из вложенных в массив persons обьектов значения ключей и ***ФОРМИРУЮ СТРОКИ***.
+    
+//     // вывод значений обьектов в соответсtвии с шапкой таблицы (там где соответсtвия нет
+//     //   выводится undefined)
+    
+//     let row =" ";
+    
+//     // в связи с тем что все строки лепятся внутри цикла , для того чтобы их можно было
+//     // вывести за рамки цикла, делаю пустую ячейку для склейки всей строки
+//     for (let i of persons) {
+//        row +="<tr>" 
+//     for (let k of arrOfUniqKey) {  
+    
+//       row +=`<td>${typeof i[k] === 'undefined' ? 'хрен его знает' : i[k]}</td>`}
+    
+//       row += "</tr>"}
+       
+      
+//       // СЛЕПЛИВАЮ ТЭГИ ТАБЛИЦЫ ЗАГОЛОВОК И СТРОКИ
+    
+//       let result = "<table>"  + header + row + "</table>";
+//       console.log(result)
+    
+//      document.write(result); 
